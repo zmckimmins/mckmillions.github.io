@@ -1,0 +1,102 @@
+<div id="form">
+    <div class="logo-wrapper">
+        <div class="logo">
+            <div class="cblocks">
+                <div class="cblocks-rotater">
+                    <div class="cblock"></div>
+                    <div class="cblock"></div>
+                    <div class="cblock"></div>
+                </div>
+                <div class="cblocks-inner"></div>
+                <div class="cblocks-text">Expensed</div>
+            </div>
+        </div>
+
+        <ul class="bg-bubbles">
+            <li><i class="icon-money-1"></i></li>
+            <li><i class="icon-money"></i></li>
+            <li>&#36;</li>
+            <li><i class="icon-money-1"></i></li>
+            <li><i class="icon-money-1"></i></li>
+            <li>&#36;</li>
+            <li>&#36;</li>
+            <li>&#36;</li>
+            <li>&#36;</li>
+            <li><i class="icon-money-1"></i></li>
+        </ul>
+    </div>
+
+    <div id="login">
+        <h1>Already have an account? Sign in.</h1>
+        <!-- login form -->
+        <form method="post" novalidate name="login">
+
+            <div class="top-row">
+                <div class="field-wrap">
+                    <label ng-show="!userLogin.username.length">
+                        Username<span class="req">*</span>
+                    </label>
+                    <input type="text" name="username" ng-model="userLogin.username" ng-required="true" ng-minlength="1" autocomplete="off" />
+                    <p class="error" ng-show="login.username.$invalid && login.username.$touched"> Please, enter your first name</p>
+                </div>
+
+                <div class="field-wrap">
+                    <label ng-show="!userLogin.password.length">
+                        Password<span class="req">*</span>
+                    </label>
+                    <input type="password" name="loginPass" ng-model="userLogin.password" ng-required="true" ng-minlength="1" autocomplete="off" />
+                    <p class="error" ng-show="login.loginPass.$invalid && login.loginPass.$touched">Please, enter your password.</p>
+                </div>
+
+                <button type="submit" class="button button-block" />Sign In</button>
+            </div>
+        </form>
+        <!-- login form -->
+    </div>
+
+
+    <div id="signup">
+        <h1>Need an account? <a href="" ng-click="ShowHide()">Sign up</a></h1>
+        <!-- signup form -->
+        <form ng-show="IsVisible" novalidate method="post" name="signup">
+
+            <div class="field-wrap">
+                <label ng-show="!userInfo.first.length">
+                    First Name<span class="req">*</span>
+                </label>
+                <input type="text" name="firstname" ng-model="userInfo.first" ng-required="true" ng-minlength="2" autocomplete="off" />
+                <p class="error" ng-show="signup.firstname.$invalid && signup.firstname.$touched"> Please, enter your first name</p>
+            </div>
+
+            <div class="field-wrap">
+                <label ng-show="!userInfo.last.length">
+                    Last Name<span class="req">*</span>
+                </label>
+                <input type="text" name="lastname" ng-model="userInfo.last" ng-required="true" autocomplete="off" />
+                <p class="error" ng-show="signup.lastname.$invalid && signup.lastname.$touched"> Please, enter your last name</p>
+            </div>
+
+            <div class="field-wrap">
+                <label ng-show="!userInfo.username.length">
+                    Username<span class="req">*</span>
+                </label>
+                <input type="text" name="username" ng-model="userInfo.username" ng-required="true" ng-minlength="2" autocomplete="off" />
+                <p class="error" ng-show="signup.username.$invalid && signup.username.$touched"> Please, enter your username</p>
+            </div>
+
+            <div class="field-wrap">
+                <label ng-show="!userInfo.password.length">
+                    Password<span class="req">*</span>
+                </label>
+                <input type="password" name="pswd" ng-model="userInfo.password" ng-required="true" ng-minlength="2" autocomplete="off" />
+                <p class="error" ng-show="signup.pswd.$invalid && signup.pswd.$touched"> Please, enter your password</p>
+            </div>
+
+            <button class="button button-block" type="submit" ng-click="createUser()">Sign up</button>
+
+        </form>
+        <!-- signup form -->
+    </div>
+
+</div>
+<!-- /form -->
